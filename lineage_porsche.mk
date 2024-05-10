@@ -11,10 +11,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from porsche device
 $(call inherit-product, device/realme/porsche/device.mk)
 
-# Inherit some common PixelOS stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosp_porsche
+# Rising Flags
+RISING_CHIPSET="Snapdragon 888 5G"
+RISING_MAINTAINER="KingGeorgeV"
+RISING_PACKAGE_TYPE := "CORE"
+TARGET_ENABLE_BLUR := false
+PRODUCT_NO_CAMERA := true
+
+# GMS Flags
+WITH_GMS := true
+TARGET_CORE_GMS := true
+
+PRODUCT_NAME := lineage_porsche
 PRODUCT_DEVICE := porsche
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
